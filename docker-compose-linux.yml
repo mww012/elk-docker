@@ -18,11 +18,6 @@ services:
       - transport.host=127.0.0.1
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms${ES_JVM_HEAP} -Xmx${ES_JVM_HEAP}"
-    mem_limit: ${ES_MEM_LIMIT}
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
     volumes:
       # ES data dir mount to local drive
       - ${ES_MOUNT_DRIVE}:/usr/share/elasticsearch/data
